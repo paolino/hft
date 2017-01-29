@@ -29,6 +29,6 @@ library
   exposed-modules:     HFT,Test,Bench
   -- other-modules:       
   -- other-extensions:    
-  build-depends:       base >=4.9 && <4.10, QuickCheck
+  build-depends:       base >=4.9 && <4.10, QuickCheck,criterion
   -- hs-source-dirs:      
   default-language:    Haskell2010
