@@ -1,0 +1,3 @@
+import Bench
+
+main = benchSuite 
