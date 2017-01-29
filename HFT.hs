@@ -2,7 +2,7 @@
 
 -- Finger tree half spine, amortized O(1) access to head (push/pop) , O(log n) access to elements (peek)
 
-module HFT (F(E),push,pop,Peek(peek)) where
+module HFT (F(E),push,pop,Peek(peek),P(..)) where
 
 import Control.Applicative
 import Data.List
@@ -33,7 +33,7 @@ instance Power (T a) where
     power (S k _) = k
     power (B k _ _) = k
 
-newtype P a = P {unP :: a} deriving Show
+newtype P a = P {unP :: a} deriving (Eq,Show)
 
 instance Power (P a) where
     power _ = 1
