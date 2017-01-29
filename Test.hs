@@ -12,5 +12,4 @@ deriving instance Arbitrary (P Int)
 pushpop :: [P Int] -> Bool
 pushpop =  (==) <$> (unfoldr pop . foldr push E) <*> id
 
-main :: IO ()
-main = quickCheck pushpop
+testMain = quickCheck pushpop

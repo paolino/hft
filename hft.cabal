@@ -22,7 +22,7 @@ Benchmark bench
 
 Test-Suite test
     type:       exitcode-stdio-1.0
-    main-is:    Test.hs
+    main-is:    TestMain.hs
     build-depends: base,QuickCheck
 
 library
