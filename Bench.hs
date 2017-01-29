@@ -4,13 +4,12 @@ import Test.QuickCheck
 
 import Test
 
+ns = [1000,10000,100000,1000000]
+
 benchSuite = do
-    x1 <- generate (vectorOf 1000 arbitrary)
-    x10 <- generate (vectorOf 10000 arbitrary)
-    x100 <- generate (vectorOf 100000 arbitrary)
+
+    xs <- mapM (\n -> generate (vectorOf n arbitrary)) ns
     defaultMain [
-        bgroup "pushpop" [ bench "1000"  $ whnf pushpop x1
-               , bench "10000"  $ whnf pushpop x10
-               , bench "100000"  $ whnf pushpop x100
-               ]
+        bgroup "pushpop" $ 
+            zipWith (\n x -> bench (show n)  $ whnf pushpop x) ns xs
         ]
